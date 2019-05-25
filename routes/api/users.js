@@ -68,7 +68,7 @@ router.post("/login", (req, res) => {
           // Create JWT Payload
           const payload = {
             id: user.id,
-            name: user.name
+            firstname: user.firstname
           };
   // Sign token
           jwt.sign(
@@ -92,32 +92,6 @@ router.post("/login", (req, res) => {
       });
     });
   });
-
-  
-// @route POST api/users/register
-// @desc Register user
-// @access Public
-router.get("/dashboard", (req, res) => {
-  let x = this.props.auth;
-  console.log(x);
-
-
-
-//   User.findById({_id: duser.id}, 'firstname lastname email' , function (err, person){
-//     if (err) {
-//       return next(error);
-//   } else {
-//       console.log("dashboard" + duser.firstname);
-//   }
-// }) //close user find
-  // const newUser = new User({
-  //       firstname: req.body.firstname,
-  //       lastname: req.body.lastname,
-  //       email: req.body.email,
-  //       password: req.body.password
-  //     });
-    })
-  // )})
 
 
   module.exports = router;

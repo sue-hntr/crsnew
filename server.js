@@ -19,9 +19,9 @@ app.use(bodyParser.json());
 // const db = require("./config/keys").mongoURI;
 
 // MongoDB for Heroku Prod
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mern", { useNewUrlParser: true })
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/crsnew", { useNewUrlParser: true })
 // MongoDB for local
-// mongoose.connect("mongodb://localhost/mern", { useNewUrlParser: true })
+mongoose.connect("mongodb://localhost/crsnew", { useNewUrlParser: true })
 .then(() => console.log("MongoDB successfully connected"))
 .catch( err => console.log(err));
 
