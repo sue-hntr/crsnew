@@ -67,6 +67,7 @@ return (
                             <br />
                             Consumer Registration for Services</h4>
                         </div>
+                        <i class="far fa-frown"></i>
                         <div className="col-2"></div>
                     </div> 
                     <div className="row">
@@ -84,7 +85,7 @@ return (
                         <div className="col-9 pzero text-left">
 {/* FORM  */}
             <form noValidate onSubmit={this.onSubmit}>
-              {/* <div className="input-field col s12"> */}
+              <div className="row_forms">
               <label htmlFor="name">First Name</label>
                 <Input
                   onChange={this.onChange}
@@ -96,10 +97,9 @@ return (
                     invalid: errors.firstname
                   })}
                 />
-                <span className="red-text">{errors.firstname}</span>
-              {/* </div> */}
-
-              {/* <div className="input-field col s12"> */}
+                <div className="validate_errortext">{errors.firstname}</div>
+              </div> 
+              <div className="row_forms">
               <label htmlFor="name">Last Name</label>
                 <Input
                   onChange={this.onChange}
@@ -111,10 +111,10 @@ return (
                     invalid: errors.lastname
                   })}
                 />
-                <span className="red-text">{errors.lastname}</span>
-              {/* </div> */}
+                <div className="validate_errortext">{errors.lastname}</div>
+              </div>
 
-              {/* <div className="input-field col s12"> */}
+              <div className="row_forms">
               <label htmlFor="email">Email</label>
                 <Input
                   onChange={this.onChange}
@@ -126,9 +126,9 @@ return (
                     invalid: errors.email
                   })}
                 />
-                <span className="red-text">{errors.email}</span>
-              {/* </div> */}
-              {/* <div className="input-field col s12"> */}
+                <div className="validate_errortext">{errors.email}</div>
+              </div>
+              <div className="row_forms">
               <label htmlFor="password">Password</label>
                 <Input
                   onChange={this.onChange}
@@ -140,10 +140,9 @@ return (
                     invalid: errors.password
                   })}
                 />
-                <span className="red-text">{errors.password}</span>
-
-              {/* </div> */}
-              {/* <div className="input-field col s12"> */}
+                <div className="validate_errortext">{errors.password}</div>
+              </div>
+              <div className="row_forms">
               <label htmlFor="password2">Confirm Password</label>
                 <Input
                   onChange={this.onChange}
@@ -155,10 +154,8 @@ return (
                     invalid: errors.password2
                   })}
                 />
-
-                <span className="red-text">{errors.password2}</span>
-              {/* </div> */}
-              {/* <div className="col s12" style={{ paddingLeft: "11.250px" }}> */}
+                <div className="validate_errortext">{errors.password2}</div>
+              </div>
                 <FormBtn type="submit">
                   Create Account
                 </FormBtn>

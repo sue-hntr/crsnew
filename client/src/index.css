@@ -144,6 +144,31 @@ input.placeholder{
   text-transform: capitalize!important;
 }
 
-.red-text {
+/* The following are derived from Bootstrap valdation css */
+
+/* this will show up as text error under the input form */
+.validate_errortext{
   color: #F44336 !important;
+  display: block;
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 80%;
+}
+
+/* this will turn the input box red and add an X inside*/
+.validate_errorfield{
+  border-color: #F44336 !important;
+  padding-right: 2.25rem;
+  background-repeat: no-repeat;
+  background-position: center right calc(2.25rem / 4);
+    background-image: url();
+}
+
+/* this is spaceing between each input row on register and login*/
+.row_forms{
+  display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
 }
