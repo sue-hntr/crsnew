@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
-// import classnames from "classnames";
+import classnames from "classnames";
 import { Input, FormBtn } from "../layout/Form";
 
 
@@ -17,7 +17,7 @@ class Register extends Component {
       email: "",
       password: "",
       password2: "",
-      // errors: {}
+      errors: {}
     };
   }
   componentDidMount() {
@@ -28,11 +28,11 @@ class Register extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // if (nextProps.errors) {
-    //   this.setState({
-    //     errors: nextProps.errors
-    //   });
-    // }
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
   }
 
 onChange = e => {
@@ -55,11 +55,7 @@ onSubmit = e => {
 };
 
 render() {
-//use to redirect to dashboard if redirect doesn't work
-  // const { redirect } = this.state;
-  // if (redirect){
-  //   return <Redirect to='/dashboard' />
-  // }
+  const { errors } = this.state;
 return (
   <div>
             <div className="container">
@@ -93,14 +89,14 @@ return (
                 <Input
                   onChange={this.onChange}
                   value={this.state.firstname}
-                  // error={errors.name}
+                  error={errors.firstname}
                   id="firstname"
                   type="text"
-                  // className={classnames("", {
-                  //   invalid: errors.name
-                  // })}
+                  className={classnames("", {
+                    invalid: errors.firstname
+                  })}
                 />
-                {/* <span className="red-text">{errors.name}</span> */}
+                <span className="red-text">{errors.firstname}</span>
               {/* </div> */}
 
               {/* <div className="input-field col s12"> */}
@@ -108,14 +104,14 @@ return (
                 <Input
                   onChange={this.onChange}
                   value={this.state.lastname}
-                  // error={errors.name}
+                  error={errors.lastname}
                   id="lastname"
                   type="text"
-                  // className={classnames("", {
-                  //   invalid: errors.name
-                  // })}
+                  className={classnames("", {
+                    invalid: errors.lastname
+                  })}
                 />
-                {/* <span className="red-text">{errors.name}</span> */}
+                <span className="red-text">{errors.lastname}</span>
               {/* </div> */}
 
               {/* <div className="input-field col s12"> */}
@@ -123,29 +119,28 @@ return (
                 <Input
                   onChange={this.onChange}
                   value={this.state.email}
-                  // error={errors.email}
+                  error={errors.email}
                   id="email"
                   type="email"
-                  // className={classnames("", {
-                  //   invalid: errors.email
-                  // })}
+                  className={classnames("", {
+                    invalid: errors.email
+                  })}
                 />
-                {/* <span className="red-text">{errors.email}</span> */}
+                <span className="red-text">{errors.email}</span>
               {/* </div> */}
               {/* <div className="input-field col s12"> */}
               <label htmlFor="password">Password</label>
                 <Input
                   onChange={this.onChange}
                   value={this.state.password}
-                  // error={errors.password}
+                  error={errors.password}
                   id="password"
                   type="password"
-                  // className={classnames("", {
-                  //   invalid: errors.password
-                  // })}
+                  className={classnames("", {
+                    invalid: errors.password
+                  })}
                 />
-
-                {/* <span className="red-text">{errors.password}</span> */}
+                <span className="red-text">{errors.password}</span>
 
               {/* </div> */}
               {/* <div className="input-field col s12"> */}
@@ -153,15 +148,15 @@ return (
                 <Input
                   onChange={this.onChange}
                   value={this.state.password2}
-                  // error={errors.password2}
+                  error={errors.password2}
                   id="password2"
                   type="password"
-                  // className={classnames("", {
-                  //   invalid: errors.password2
-                  // })}
+                  className={classnames("", {
+                    invalid: errors.password2
+                  })}
                 />
 
-                {/* <span className="red-text">{errors.password2}</span> */}
+                <span className="red-text">{errors.password2}</span>
               {/* </div> */}
               {/* <div className="col s12" style={{ paddingLeft: "11.250px" }}> */}
                 <FormBtn type="submit">
@@ -184,12 +179,12 @@ return (
 Register.propTypes = {
   registerUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  // errors: PropTypes.string.isRequired
+  errors: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
   auth: state.auth,
-  // errors: state.errors
+  errors: state.errors
 });
 
 export default connect(

@@ -143,3 +143,7 @@ input.placeholder{
 .navbar-brand a{
   text-transform: capitalize!important;
 }
+
+.red-text {
+  color: #F44336 !important;
+}
