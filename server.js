@@ -15,8 +15,6 @@ app.use(
   })
 );
 app.use(bodyParser.json());
-// DB Config
-// const db = require("./config/keys").mongoURI;
 
 // MongoDB for Heroku Prod
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/crsnew", { useNewUrlParser: true })

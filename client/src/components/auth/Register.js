@@ -98,7 +98,7 @@ return (
                     <Col xs={9} >
       <Form noValidate validated={validated} onSubmit={e => this.onSubmit(e)} >
         <Form.Row>
-            <Form.Group controlId="firstname">
+            <Form.Group >
               <Form.Label>First name</Form.Label>
               <Form.Control
                   onChange={this.onChange}
@@ -114,7 +114,7 @@ return (
             </Form.Group>
         </Form.Row>
         <Form.Row>
-            <Form.Group controlId="lastname">
+            <Form.Group >
               <Form.Label>Last name</Form.Label>
               <Form.Control
                   onChange={this.onChange}
@@ -130,7 +130,7 @@ return (
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group controlId="email">
+            <Form.Group >
               <Form.Label>Email</Form.Label>
               <Form.Control
                   onChange={this.onChange}
@@ -146,7 +146,7 @@ return (
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group controlId="password">
+            <Form.Group >
               <Form.Label>Password</Form.Label>
               <Form.Control
                   onChange={this.onChange}
@@ -162,7 +162,7 @@ return (
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group controlId="password2">
+            <Form.Group >
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
                   onChange={this.onChange}
