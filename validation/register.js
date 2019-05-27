@@ -10,10 +10,10 @@ module.exports = function validateRegisterInput(data) {
   data.password2 = !isEmpty(data.password2) ? data.password2 : "";
 // Name checks
   if (Validator.isEmpty(data.firstname)) {
-    errors.name = "First name field is required";
+    errors.firstname = "First name is required";
   }
   if (Validator.isEmpty(data.lastname)) {
-    errors.name = "Last name field is required";
+    errors.lastname = "Last name is required";
   }
 // Email checks
   if (Validator.isEmpty(data.email)) {

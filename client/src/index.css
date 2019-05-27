@@ -110,7 +110,7 @@ code {
   /* border: 1px blue solid; */
 }
 .pagetitlemarg{
-  margin-top: 30px;
+  margin-top: 50px;
   margin-left: 0;
 }
 .pzero{
@@ -159,9 +159,8 @@ input.placeholder{
 .validate_errorfield{
   border-color: #F44336 !important;
   padding-right: 2.25rem;
-  background-repeat: no-repeat;
   background-position: center right calc(2.25rem / 4);
-    background-image: url();
+
 }
 
 /* this is spaceing between each input row on register and login*/
@@ -171,4 +170,14 @@ input.placeholder{
     flex-wrap: wrap;
     margin-right: -5px;
     margin-left: -5px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+/* REACT_BOOSTRAP */
+.form-group{
+  width: 100%
 }

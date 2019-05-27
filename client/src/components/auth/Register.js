@@ -4,7 +4,16 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
-import { Input, FormBtn } from "../layout/Form";
+
+//NPM React-bootstrap not HTML version
+import Container from 'react-bootstrap/Container';
+// import InputGroup from 'react-bootstrap/InputGroup';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Form from 'react-bootstrap/Form';
+// import FormControl from 'react-bootstrap/FormControl'
+// import FormCheck from 'react-bootstrap/FormCheck'
+import Button from 'react-bootstrap/Button';
 
 
 class Register extends Component {
@@ -17,7 +26,8 @@ class Register extends Component {
       email: "",
       password: "",
       password2: "",
-      errors: {}
+      errors: {},
+      validated: false
     };
   }
   componentDidMount() {
@@ -51,43 +61,46 @@ onSubmit = e => {
       password2: this.state.password2
     };
 
-  this.props.registerUser(newUser, this.props.history); 
+  this.props.registerUser(newUser, this.props.history);
+
 };
 
 render() {
-  const { errors } = this.state;
+  const { errors, validated } = this.state;
 return (
-  <div>
-            <div className="container">
-                <div className="pagetitlemarg">
-                    <div className="row">
-                        <div className="col-1 pzero"></div>
-                        <div className="col-9 pzero text-left">
-                          <h4 className="dblue">Welcome to 
-                            <br />
-                            Consumer Registration for Services</h4>
-                        </div>
-                        <i class="far fa-frown"></i>
-                        <div className="col-2"></div>
-                    </div> 
-                    <div className="row">
-                        <div className="col-1 pzero"></div>
-                        <div className="col-9 pzero text-left">
-                          <h6 className="dblue">Already registered? Please&nbsp; 
+
+            <Container>
+              <div className="pagetitlemarg">
+                  <Row>
+                    <Col xs={1} ></Col>
+                    <Col xs={9} >
+                        <h4 className="dblue">
+                          Welcome to 
+                          <br />
+                          Consumer Registration for Services
+                        </h4>
+                    </Col>
+                    <Col xs={2} ></Col>
+                  </Row>
+                  <Row>
+                  <Col xs={1} ></Col>
+                    <Col xs={9} >
+                        <h6 className="dblue">
+                          Already registered? Please&nbsp; 
                           <Link to="/login">log in</Link>.
-                          </h6>
-                        </div>
-                        <div className="col-2"></div>
-                    </div> 
-                    <div className="pagetitlemarg">
-                      <div className="row">
-                        <div className="col-1 pzero"></div>
-                        <div className="col-9 pzero text-left">
-{/* FORM  */}
-            <form noValidate onSubmit={this.onSubmit}>
-              <div className="row_forms">
-              <label htmlFor="name">First Name</label>
-                <Input
+                        </h6>
+                    </Col>
+                    <Col xs={2} ></Col>
+                  </Row> 
+                 <div className="pagetitlemarg">
+                  <Row>
+                    <Col xs={1} ></Col>
+                    <Col xs={9} >
+      <Form noValidate validated={validated} onSubmit={e => this.onSubmit(e)} >
+        <Form.Row>
+            <Form.Group controlId="firstname">
+              <Form.Label>First name</Form.Label>
+              <Form.Control
                   onChange={this.onChange}
                   value={this.state.firstname}
                   error={errors.firstname}
@@ -96,12 +109,14 @@ return (
                   className={classnames("", {
                     invalid: errors.firstname
                   })}
-                />
-                <div className="validate_errortext">{errors.firstname}</div>
-              </div> 
-              <div className="row_forms">
-              <label htmlFor="name">Last Name</label>
-                <Input
+              />
+              <div className="validate_errortext">{errors.firstname}</div>
+            </Form.Group>
+        </Form.Row>
+        <Form.Row>
+            <Form.Group controlId="lastname">
+              <Form.Label>Last name</Form.Label>
+              <Form.Control
                   onChange={this.onChange}
                   value={this.state.lastname}
                   error={errors.lastname}
@@ -110,13 +125,14 @@ return (
                   className={classnames("", {
                     invalid: errors.lastname
                   })}
-                />
-                <div className="validate_errortext">{errors.lastname}</div>
-              </div>
-
-              <div className="row_forms">
-              <label htmlFor="email">Email</label>
-                <Input
+              />
+              <div className="validate_errortext">{errors.lastname}</div>
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
                   onChange={this.onChange}
                   value={this.state.email}
                   error={errors.email}
@@ -125,12 +141,14 @@ return (
                   className={classnames("", {
                     invalid: errors.email
                   })}
-                />
-                <div className="validate_errortext">{errors.email}</div>
-              </div>
-              <div className="row_forms">
-              <label htmlFor="password">Password</label>
-                <Input
+              />
+              <div className="validate_errortext">{errors.email}</div>
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group controlId="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
                   onChange={this.onChange}
                   value={this.state.password}
                   error={errors.password}
@@ -139,12 +157,14 @@ return (
                   className={classnames("", {
                     invalid: errors.password
                   })}
-                />
-                <div className="validate_errortext">{errors.password}</div>
-              </div>
-              <div className="row_forms">
-              <label htmlFor="password2">Confirm Password</label>
-                <Input
+              />
+              <div className="validate_errortext">{errors.password}</div>
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group controlId="password2">
+              <Form.Label>Confirm Password</Form.Label>
+              <Form.Control
                   onChange={this.onChange}
                   value={this.state.password2}
                   error={errors.password2}
@@ -153,21 +173,19 @@ return (
                   className={classnames("", {
                     invalid: errors.password2
                   })}
-                />
-                <div className="validate_errortext">{errors.password2}</div>
-              </div>
-                <FormBtn type="submit">
-                  Create Account
-                </FormBtn>
-              {/* </div> */}
-            </form>
-            <div className="col-2"></div>
-           </div> 
-          </div>
-         </div> 
-        </div> 
-       </div>
-      </div>
+              />
+              <div className="validate_errortext">{errors.password2}</div>
+            </Form.Group>
+          </Form.Row>
+            <Button type="submit">Submit form</Button>
+          </Form>
+            </Col>
+              <Col xs={2} ></Col>
+          
+        </Row>
+        </div>   {/* pagetitlemarg form */}
+        </div>   {/* pagetitlemarg top */}
+        </Container>
      );
    }
  }
