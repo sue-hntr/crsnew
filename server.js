@@ -23,17 +23,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/crsnew", { useN
 .then(() => console.log("MongoDB successfully connected"))
 .catch( err => console.log(err));
 
-//////couldn't get MongoDB Atlas to work within an hour
-// Connect to MongoDB
-// mongoose
-//   .connect(
-//     process.env.MONGODB_URI, { useNewUrlParser: true }
-//   )
-//   .then(() => console.log("MongoDB successfully connected"))
-//   .catch(err => 
-//     console.log(err)
-//     );
-
 // Passport middleware
 app.use(passport.initialize());
 // Passport config
