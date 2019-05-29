@@ -8,7 +8,7 @@ function IdForms() {
         <div className="row">
             <div className="col-1 pzero"></div>
             <div className="col-9 pzero text-left">
-              <h4 className="dblue">List of Documents that Comsumers
+              <h4 className="dblue">List of Documents that Consumers
                 <br />
                 may need for their appointment with a CRS Counselor
               </h4>
