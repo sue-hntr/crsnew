@@ -1,14 +1,17 @@
+Consumer Registration for Services
+
+The working version of this app is at https://last-mern.herokuapp.com/.
+It has a responsive design and is best viewed with a screen width of 375 pixels.
 
 CRS is an independent student project created for the UPENN Coding Bootcamp. I chose to work independently to explore my interest in UX design for a real-life client and also to gain better understanding of React, Redux and Express routing.
 
-This is a prototype app for a non-profit I call Consumer Registration for Services (CRS) -- the actual client chose to remain anonymous due to copyright issues. CRS provides financial and legal counseling about housing: renting, purchasing, declaring bankruptcy, fighting foreclosure. CRS wants to play an integral part of the financial stabilization of neighborhoods in the City of Philadelphia and its surrounding communities.
+This is a prototype app for a non-profit I call Consumer Registration for Services (CRS) -- the actual client chose to remain anonymous due to copyright issues. CRS provides financial and legal counseling about housing: renting, purchasing, declaring bankruptcy, fighting foreclosure. CRS wants to play an integral part of the financial stabilization of neighborhoods in urban centers and surrounding communities.
 
 The CRS Counselors provide services to Consumers free of charge —consumers just need to provide them with financial information and documents. Usually a single Counselor stays with the Consumer until the Consumer’s issue is resolved.
 
 Currently, NCWS is a paper-only office. There is no database other than basic contact information for counselors to reference. Also consumer intake is a burdensome and time-consuming consuming process for counselors who have to enter information into Google Forms. The CRS Google Forms system outputs consumer information in a format that CRS can use to both advise clients and process billing to Federal and State resources.
 
 Prior to the Google Forms system, CRS clocked their new consumer intake at approximately 2 hours. Google Forms has improved that to approximately 30 minutes. I hope to reduce the burden on the Counselors and Administrative staff even further by encouraging Consumers to enter much of their information and make an appointment online while still creating a secure and trustworthy full stack app.
-
 
 This version of the app contains a full React/Redux Express/Node Mongo login/authentification process. Later versions will contain:
 
@@ -43,7 +46,7 @@ NPMs include:
     FRONT-END and STATE 
     "bootstrap": front-end UI library
     "classnames": A simple JavaScript utility for conditionally joining classNames together.
-    "react-bootstrap": absolutelly necessary if using react with a db AND bootstrap
+    "react-bootstrap": absolutely necessary if using react with a db AND bootstrap
     "react-redux": communicate between react and redux
     "react-router-dom": DOM bindings for React Router.
     "redux": a predictable state container for JavaScript apps to easily communicate between react components

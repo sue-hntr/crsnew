@@ -3,16 +3,24 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
-// import classnames from "classnames";
-import { Input, FormBtn } from "../layout/Form";
+import classnames from "classnames";
+
+//NPM React-bootstrap not HTML version
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
       email: "",
-      password: ""
-      // errors: {}
+      password: "",
+      errors: {},
+      validated: false
     };
   }
 
@@ -27,16 +35,17 @@ class Login extends Component {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/dashboard"); // push user to dashboard when they login
     }
-// if (nextProps.errors) {
-//       this.setState({
-//         errors: nextProps.errors
-//       });
-//     }
+    if (nextProps.errors) {
+          this.setState({
+            errors: nextProps.errors
+          });
+        }
   }
 
 onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
+
 onSubmit = e => {
     e.preventDefault();
     const userData = {
@@ -47,96 +56,93 @@ onSubmit = e => {
   };
 
 render() {
-    // const { errors } = this.state;
+    const { errors, validated } = this.state;
 return (
-  <div>
-  <div className="container">
-      <div className="pagetitlemarg">
-          <div className="row">
-              <div className="col-1 pzero"></div>
-              <div className="col-9 pzero text-left">
-                <h4 className="dblue">Welcome to 
-                  <br />
-                  Consumer Registration for Services</h4>
-              </div>
-              <div className="col-2"></div>
-          </div> 
-          <div className="row">
-              <div className="col-1 pzero"></div>
-              <div className="col-9 pzero text-left">
-                <h6 className="dblue">Don't have an account? Please&nbsp; 
-                <Link to="/register">register</Link>.
-                </h6>
-              </div>
-              <div className="col-2"></div>
-          </div> 
-          <div className="pagetitlemarg">
-            <div className="row">
-              <div className="col-1 pzero"></div>
-              <div className="col-9 pzero text-left">
+
+  <Container>
+  <div className="pagetitlemarg">
+      <Row>
+        <Col xs={1} ></Col>
+        <Col xs={9} >
+            <h4 className="dblue">
+              Welcome to 
+              <br />
+              Consumer Registration for Services
+            </h4>
+        </Col>
+        <Col xs={2} ></Col>
+      </Row>
+      <Row>
+      <Col xs={1} ></Col>
+        <Col xs={9} >
+            <h6 className="dblue">
+              Not a registered consumer? Please&nbsp; 
+              <Link to="/register">register here</Link>.
+            </h6>
+        </Col>
+        <Col xs={2} ></Col>
+      </Row> 
+     <div className="pagetitlemarg">
+      <Row>
+        <Col xs={1} ></Col>
+        <Col xs={9} >
 {/* FORM */}
-            <form noValidate onSubmit={this.onSubmit}>
-              {/* <div className="input-field col s12"> */}
-              <label htmlFor="email">Email</label>
-                <Input
-                  onChange={this.onChange}
-                  value={this.state.email}
-                  // error={errors.email}
-                  id="email"
-                  type="email"
-                  // className={classnames("", {
-                  //   invalid: errors.email || errors.emailnotfound
-                  // })}
+        <Form noValidate validated={validated} onSubmit={e => this.onSubmit(e)} >
+          <Form.Row>
+              <Form.Group >
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                    onChange={this.onChange}
+                    value={this.state.email}
+                    error={errors.email}
+                    id="email"
+                    type="email"
+                    className={classnames("", {
+                      invalid: errors.email
+                    })}
                 />
-                
-                {/* <span className="red-text">
-                  {errors.email}
-                  {errors.emailnotfound}
-                </span> */}
-              {/* </div> */}
-              {/* <div className="input-field col s12"> */}
-              <label htmlFor="password">Password</label>
-                <Input
+                <div className="validate_errortext">{errors.email}</div>
+              </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group >
+              <Form.Label>Password</Form.Label>
+              <Form.Control
                   onChange={this.onChange}
                   value={this.state.password}
-                  // error={errors.password}
+                  error={errors.password}
                   id="password"
                   type="password"
-                  // className={classnames("", {
-                  //   invalid: errors.password || errors.passwordincorrect
-                  // })}
-                />
-
-                {/* <span className="red-text">
-                  {errors.password}
-                  {errors.passwordincorrect}
-                </span> */}
-              {/* </div> */}
-              {/* <div className="col s12" style={{ paddingLeft: "11.250px" }}> */}
-                <FormBtn type="submit" >
-                  Login
-                </FormBtn>
-              {/* </div> */}
-            </form>
-            <div className="col-2"></div>
-           </div> 
-          </div>
-         </div> 
-        </div> 
-       </div>
-      </div>
+                  className={classnames("", {
+                    invalid: errors.password
+                  })}
+              />
+              <div className="validate_errortext">{errors.password}</div>
+            </Form.Group>
+          </Form.Row>
+          <Button type="submit">Submit form</Button>
+      </Form>
+              </Col>
+             <Col xs={2} ></Col>
+          
+        </Row>
+        </div>   {/* pagetitlemarg form */}
+        </div>   {/* pagetitlemarg top */}
+        </Container>
      );
    }
  }
+
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  // errors: PropTypes.node.isRequired
+  errors: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({
-  auth: state.auth
-  // errors: state.errors
+  auth: state.auth,
+  errors: state.errors
 });
+
 export default connect(
   mapStateToProps,
   { loginUser }

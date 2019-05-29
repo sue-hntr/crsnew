@@ -7,12 +7,9 @@ import classnames from "classnames";
 
 //NPM React-bootstrap not HTML version
 import Container from 'react-bootstrap/Container';
-// import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form';
-// import FormControl from 'react-bootstrap/FormControl'
-// import FormCheck from 'react-bootstrap/FormCheck'
 import Button from 'react-bootstrap/Button';
 
 
@@ -178,9 +175,9 @@ return (
             </Form.Group>
           </Form.Row>
             <Button type="submit">Submit form</Button>
-          </Form>
+      </Form>
             </Col>
-              <Col xs={2} ></Col>
+             <Col xs={2} ></Col>
           
         </Row>
         </div>   {/* pagetitlemarg form */}

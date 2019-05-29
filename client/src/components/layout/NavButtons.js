@@ -11,7 +11,7 @@ function NavButtons() {
                     <div className="row">
                         <div className="col-1 pzero"></div>
                         <div className="col-2">
-                            <Link to="/appointment">
+                            <Link to="/appointmentmake">
                                 <img src="images/Appt.png" alt="text"/>
                             </Link>
                             <br />
@@ -21,7 +21,7 @@ function NavButtons() {
                         </div>
                         <div className="col-1"></div>
                         <div className="col-2">
-                            <Link to="/forms">
+                            <Link to="/idforms">
                                 <img src="images/Forms.png" alt="text" />
                             </Link>
                             <br />
@@ -41,12 +41,12 @@ function NavButtons() {
                         </div>
                         <div className="col-1"></div>
                         <div className="col-2">
-                            <Link to="/logout">
+                            <Link to="/">
                                 <img src="images/HomeConsumers.png" alt="text"/>
                             </Link>
                             <br />
                             <span className="btnlabel">
-                                &nbsp;&nbsp;Log
+                                CRS Home
                   </span>
                         </div>
                     </div>
