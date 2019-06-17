@@ -188,3 +188,12 @@ table, th, td {
 th, td {
   padding: 10px;
 }
+.boxit{
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+.form-check{
+  padding-left: 3.25rem!important;
+}

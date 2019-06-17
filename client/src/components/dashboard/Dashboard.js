@@ -19,6 +19,7 @@ class Dashboard extends Component {
     //this.props.auth. information is obtained from the payload in bcrypt for route.api.user
     const { user } = this.props.auth;
     console.log(user.firstname);
+    console.log(this.props.auth.firstname);
 
     return (
 

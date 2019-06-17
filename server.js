@@ -3,8 +3,10 @@ require('dotenv').config();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const routes = require("./routes");
 
 const users = require("./routes/api/users");
+const appointments = require("./routes/api/appointments");
 
 const app = express();
 
@@ -17,9 +19,9 @@ app.use(
 app.use(bodyParser.json());
 
 // MongoDB for Heroku Prod
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/crsnew", { useNewUrlParser: true })
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/crsnew", { useNewUrlParser: true })
 // MongoDB for local
-// mongoose.connect("mongodb://localhost/crsnew", { useNewUrlParser: true })
+mongoose.connect("mongodb://localhost/crsnew", { useNewUrlParser: true })
 .then(() => console.log("MongoDB successfully connected"))
 .catch( err => console.log(err));
 
@@ -28,7 +30,8 @@ app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
 // Routes
-app.use("/api/users", users);
+// app.use("/api/users", users);
+app.use(routes);
 
 
 // Serve up static assets (usually on heroku)

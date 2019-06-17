@@ -19,18 +19,6 @@ export const registerUser = (userData, history) => dispatch => {
     );
 };
 
-// export const registerUser = (userData, history) => dispatch => {
-//   axios
-//     .post("/api/users/register", userData)
-//     .then(res => history.push("/login")) // re-direct to login on successful register
-//     .catch(err =>
-//       dispatch({
-//         type: GET_ERRORS,
-//         payload: err.response.data
-//       })
-//     );
-// };
-
 // Login - get user token
 export const loginUser = userData => dispatch => {
   axios
@@ -66,6 +54,18 @@ export const setUserLoading = () => {
   return {
     type: USER_LOADING
   };
+};
+
+export const requestAppt = (apptData, history) => dispatch => {
+  axios
+    .post("/api/appointments/appointmentmake", apptData)
+    .then(res => history.push("/appointmentdetails")) // re-direct to appointmentdetails on successful register
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
 };
 // Log user out
 export const logoutUser = () => dispatch => {
