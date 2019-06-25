@@ -3,10 +3,8 @@ require('dotenv').config();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
-const routes = require("./routes");
 
 const users = require("./routes/api/users");
-const appointments = require("./routes/api/appointments");
 
 const app = express();
 
@@ -30,8 +28,7 @@ app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
 // Routes
-// app.use("/api/users", users);
-app.use(routes);
+app.use("/api/users", users);
 
 
 // Serve up static assets (usually on heroku)

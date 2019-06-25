@@ -14,13 +14,13 @@ import NavButtons from "./components/layout/NavButtons";
 import Landing from "./components/layout/Landing";
 import About from "./components/layout/About";
 import Staff from "./components/layout/Staff";
+import SafeHome from "./components/layout/SafeHome";
 import IdForms from "./components/layout/IdForms";
+import AppointmentMake from "./components/layout/AppointmentMake";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
-import AppointmentMake from "./components/appointment/AppointmentMake";
-import AppointmentDetails from "./components/appointment/AppointmentDetails";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -55,8 +55,8 @@ class App extends Component {
             <Route exact path="/about" component={About} />
             <Route exact path="/staff" component={Staff} />
             <Route exact path="/idforms" component={IdForms} />
+            <Route exact path="/safehome" component={SafeHome} />
             <Route exact path="/appointmentmake" component={AppointmentMake} />
-            <Route exact path="/appointmentdetails" component={AppointmentDetails} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
