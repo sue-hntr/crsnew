@@ -86,6 +86,7 @@ return (
                           Already registered? Please&nbsp; 
                           <Link to="/login">log in</Link>.
                         </h6>
+                          <h6>*all fields required</h6>
                     </Col>
                     <Col xs={2} ></Col>
                   </Row> 

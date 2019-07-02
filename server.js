@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 
+// const routes = require("./routes");
+
 const users = require("./routes/api/users");
 
 const app = express();
@@ -30,6 +32,8 @@ require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
 
+app.use("/api/appointments", appointments);
+// app.use(routes);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
