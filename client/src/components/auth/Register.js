@@ -64,8 +64,8 @@ onSubmit = e => {
 
 render() {
   const { errors, validated } = this.state;
-  
 return (
+
             <Container>
               <div className="pagetitlemarg">
                   <Row>
@@ -84,11 +84,9 @@ return (
                     <Col xs={9} >
                         <h6 className="dblue">
                           Already registered? Please&nbsp; 
-                          <Link to="/login">log in</Link>.                          
+                          <Link to="/login">log in</Link>.
                         </h6>
-                        
                           <h6>*all fields required</h6>
-                        
                     </Col>
                     <Col xs={2} ></Col>
                   </Row> 
@@ -177,7 +175,7 @@ return (
               <div className="validate_errortext">{errors.password2}</div>
             </Form.Group>
           </Form.Row>
-            <Button type="submit">Register</Button>
+            <Button type="submit">Submit form</Button>
       </Form>
             </Col>
              <Col xs={2} ></Col>

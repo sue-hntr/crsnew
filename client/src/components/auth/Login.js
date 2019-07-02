@@ -120,7 +120,7 @@ return (
               <div className="validate_errortext">{errors.password}</div>
             </Form.Group>
           </Form.Row>
-          <Button type="submit">Log In to CRS</Button>
+          <Button type="submit">Submit form</Button>
       </Form>
               </Col>
              <Col xs={2} ></Col>
