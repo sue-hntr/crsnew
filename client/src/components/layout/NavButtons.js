@@ -8,6 +8,7 @@ function NavButtons() {
         <div>
             <div className="container">
                 <div className="regpagetopbtn">
+                <div className="logohead">
                     <div className="row">
                         <div className="col-1 pzero"></div>
                         <div className="col-2">
@@ -42,7 +43,7 @@ function NavButtons() {
                         <div className="col-1"></div>
                         <div className="col-2">
                             <Link to="/">
-                                <img src="images/HomeConsumers.png" alt="text"/>
+                                <img src="images/Login.png" alt="text"/>
                             </Link>
                             <br />
                             <span className="btnlabel">
@@ -52,6 +53,7 @@ function NavButtons() {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 }
