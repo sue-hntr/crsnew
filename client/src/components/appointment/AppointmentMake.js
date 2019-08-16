@@ -227,7 +227,7 @@ onSubmit = e => {
             </Form.Group>
         </Form.Row>
         <br />
-{/* START HERE WITH REACT-BOOSTRAP */}
+
 <div className="boxit">
   <Form.Group>
       <Form.Label ><strong>
@@ -333,17 +333,25 @@ onSubmit = e => {
             />
             <br />
     </Form.Group>
-    </div>
+    
         <Button type="submit">Request Appointment</Button>
+        <Row>
+        
+        <Col xs={12} >
+          <Button onClick={this.onLogoutClick}> Logout </Button>
+        </Col>
+     </Row>
+     </div>
 </Form>
             </Col>
-             <Col xs={2} >
-             <Button onClick={this.onLogoutClick}> Logout </Button>
-             </Col>
+            
           
         </Row>
-        </div>   {/* pagetitlemarg form */}
+        
+        
+
         </div>   {/* pagetitlemarg top */}
+        </div>   {/* pagetitlemarg form */}
         </Container>
      )}
  }}

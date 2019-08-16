@@ -2,26 +2,29 @@
 import React from "react";
 //Create link for navbuttons
 import { Link } from "react-router-dom";
+//react-bootstrap applications
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 function NavButtons() {
     return (
-        <div>
-            <div className="container">
-                <div className="regpagetopbtn">
+        <Container>
+                
                 <div className="logohead">
-                    <div className="row">
-                        <div className="col-1 pzero"></div>
-                        <div className="col-2">
+                    <Row>
+                        <Col xs={1} ></Col>
+                        <Col xs={2} >
                             <Link to="/appointmentmake">
                                 <img src="images/Appt.png" alt="text"/>
                             </Link>
                             <br />
                             <span className="btnlabel">
                                 Appointments
-                      </span>
-                        </div>
-                        <div className="col-1"></div>
-                        <div className="col-2">
+                            </span>
+                        </Col>
+                        <Col xs={1} ></Col>
+                        <Col xs={2} >
                             <Link to="/idforms">
                                 <img src="images/Forms.png" alt="text" />
                             </Link>
@@ -29,32 +32,31 @@ function NavButtons() {
                             <span className="btnlabel">
                                 &nbsp;&nbsp;ID/Forms
                             </span>
-                        </div>
-                        <div className="col-1"></div>
-                        <div className="col-2">
+                        </Col>
+                        <Col xs={1} ></Col>
+                        <Col xs={2} >
                             <Link to="/staff">
                                 <img src="images/Counselor.png" alt="text"/>
                             </Link>
                             <br />
                             <span className="btnlabel">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Staff
-                    </span>
-                        </div>
-                        <div className="col-1"></div>
-                        <div className="col-2">
+                            </span>
+                        </Col>
+                        <Col xs={1} ></Col>
+                        <Col xs={2} >
                             <Link to="/">
                                 <img src="images/Login.png" alt="text"/>
                             </Link>
                             <br />
                             <span className="btnlabel">
                                 CRS Home
-                  </span>
-                        </div>
-                    </div>
+                            </span>
+                        </Col>
+                    </Row>
                 </div>
-            </div>
-        </div>
-        </div>
+            
+        </Container>
     );
 }
 

@@ -111,11 +111,15 @@ code {
 }
 .pagetitlemarg{
   margin-top: 50px;
-  margin-left: 0;
 }
-.pzero{
+
+.padleft{
+padding-left: 15px;
+}
+
+/* .pzero{
   padding: 0px!important;
-}
+} */
 
 /* CSS ON BOOTSTRAP CSS */
 label{
